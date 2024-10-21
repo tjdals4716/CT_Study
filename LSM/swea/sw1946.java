@@ -13,7 +13,7 @@ public class sw1946 { // 1946 : 간단한 압축 풀기 알파벳과 숫자를 �
         int T = Integer.parseInt(br.readLine());
         for (int tc = 1; tc <= T; tc++) {
             int N = Integer.parseInt(br.readLine());
-            sb.append("#" + tc + "\n");
+            sb.append("#").append(tc).append("\n");
             for (int i = 0; i < N; i++) {
                 int cnt=10;
                 StringTokenizer st = new StringTokenizer(br.readLine());
@@ -21,7 +21,7 @@ public class sw1946 { // 1946 : 간단한 압축 풀기 알파벳과 숫자를 �
                 int num = Integer.parseInt(st.nextToken());
 
                 for (int j = 0; j < num; j++) {
-                    sb.append(ch + "");
+                    sb.append(ch);
                     cnt++;
                     if (cnt == 10) {
                         cnt = 0;
