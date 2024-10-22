@@ -1,9 +1,9 @@
-package Baekjoon;
+package Baekjoon.Bronze;
 
 import java.util.Scanner;
 
 // 최대공약수, 최소공배수
-public class Bronze_2609 {
+public class B_2609 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

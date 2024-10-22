@@ -1,4 +1,4 @@
-package Baekjoon;
+package Baekjoon.Sliver;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ import java.util.*;
 // 방문할 수 있는 정점이 여러 개인 경우에는 번호가 작은 것을 먼저 방문
 // 더 이상 방문할 수 있는 정점이 없는 경우 종료
 // 정점 번호 : 1번 ~ N번
-public class Sliver_1260 {
+public class S_1260 {
     static ArrayList<Integer>[] graph; // 인접 리스트로 그래프 구현
     static boolean[] visited; // 방문 여부 체크 배열
 
