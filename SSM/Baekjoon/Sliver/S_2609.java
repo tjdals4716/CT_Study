@@ -1,9 +1,12 @@
-package Baekjoon;
+package Baekjoon.Sliver;
 
 import java.util.Scanner;
 
-// 최대공약수, 최소공배수
-public class Bronze_2609 {
+// 백준 2609번 : 최대공약수, 최소공배수
+// 문제 설명 : 두 수의 최대공약수와 최소공배수를 구하는 문제
+// 입력 : 두 정수 A와 B가 주어진다
+// 출력 : 첫 번째 줄에 A와 B의 최대공약수, 두 번째 줄에 A와 B의 최소공배수를 출력한다
+public class S_2609 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
