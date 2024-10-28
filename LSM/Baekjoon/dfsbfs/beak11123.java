@@ -40,11 +40,10 @@ public class beak11123 { // 11123 양이 겹쳐있으면 무리로 카운트 dfs
     }
     private static void dfs(int x, int y) {
         arr[y][x] = false; // 방문했을시 false
-        int nx=0;
-        int ny=0;
+
         for (int c = 0; c < 4; c++) { //x,y 위 오른쪽 아래 왼쪽 이동
-            nx = x + dx[c];
-            ny = y + dy[c];
+            int nx = x + dx[c];
+            int ny = y + dy[c];
             if (Over(nx, ny)) { //범위를 넘어가는지 체크
                 if (arr[ny][nx]) { //다음방문할곳의 값이 true일때
                     dfs(nx, ny);
