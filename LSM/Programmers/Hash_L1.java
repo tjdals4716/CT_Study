@@ -2,7 +2,7 @@ package Programmers;
 
 import java.util.HashMap;
 
-public class Hash_L1 {
+public class Hash_L1 { // 완주하지 못한 선수 L1 Hash
     public static void main(String[] args) {
         String[] participant = {"mislav", "stanko", "mislav", "ana"};
         String[] completion = {"stanko", "ana", "mislav"};
