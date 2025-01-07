@@ -3,9 +3,8 @@ package Programmers;
 import java.util.Arrays;
 
 public class EmoticonDiscountEvent { // 이모티콘 할인행사 dfs (max depth 도달 시 최대값 찾기)
-    static int[] Rate = {40,30,20,10};
-    static int maxPlus=0,maxSales=0;
-    static int eLength,uLength;
+    static int[] Rate = {40,30,20,10}; // 비율
+    static int maxPlus=0,maxSales=0; // 결과
     static int[] emoticonRates;
     public static void main(String[] args) {
         int[][] users = {{40, 10000}, {25, 10000}};
@@ -14,11 +13,9 @@ public class EmoticonDiscountEvent { // 이모티콘 할인행사 dfs (max depth
         System.out.println(Arrays.toString(solution(users, emoticons)));
     }
     public static int[] solution(int[][] users, int[] emoticons) {
-        uLength = users.length;
-        eLength = emoticons.length;
-        emoticonRates = new int[eLength];
+        emoticonRates = new int[emoticons.length];
         // 깊이가 emoticons 다 반영됐을때
-        emoticonPriceSetting(0,users,emoticons);// 이모티콘 가격 설정 dfs
+        emoticonRateSetting(0,users,emoticons);// 이모티콘 비율 설정 dfs
         return new int[] {maxPlus,maxSales};
     }
 
@@ -29,7 +26,7 @@ public class EmoticonDiscountEvent { // 이모티콘 할인행사 dfs (max depth
             int usersPrice =0;
             int rate = user[0];
             int price = user[1];
-            for(int i=0;i<emoticonRates.length;i++){
+            for(int i=0;i<emoticonRates.length;i++){ // 세팅된 비율로 반영
                 if(rate<=emoticonRates[i]){
                     usersPrice+=emoticons[i]*(100-emoticonRates[i])/100;
                 }
@@ -49,14 +46,14 @@ public class EmoticonDiscountEvent { // 이모티콘 할인행사 dfs (max depth
         }
     }
 
-    private static void emoticonPriceSetting(int depth, int[][] users, int[] emoticons) {
-        if(depth==eLength) { // 가격 모두 설정됐을때
+    private static void emoticonRateSetting(int depth, int[][] users, int[] emoticons) {
+        if(depth==emoticons.length) { // 모든 비율 세팅됐을때
             searchMaxResult(users,emoticons);
             return;
         }
-        for(int d: Rate){
-            emoticonRates[depth] = d;
-            emoticonPriceSetting(depth+1,users,emoticons);
+        for(int d: Rate){ //비율 전체탐색
+            emoticonRates[depth] = d; 
+            emoticonRateSetting(depth+1,users,emoticons);
         }
     }
 }
